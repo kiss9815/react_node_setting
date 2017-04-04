@@ -40,7 +40,11 @@ module.exports = {
                     presets: ['es2015', 'react']
                 })],
                 exclude: /node_modules/,
-            }
+            },
+            {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+      },
         ]
     }
     //바뀐부분은 ‘react-hot’ 로더를 추가한거밖에 없습니다. 단, 여러 모듈을 한꺼번에 적용하기 때문에 babel 을 위하여
